@@ -47,9 +47,6 @@ class AdvancedCompoundingBot:
     def compound(self):
         time.sleep(1)
         compound_button_location = pyautogui.locateOnScreen('compound-button.png', confidence=0.95)
-        compound_button_not_ready_location = pyautogui.locateOnScreen('compound-button-not-ready.png', confidence=0.95)
-        if compund_button_not_ready_location != None:
-            print("not ready to compound yet")
         if compound_button_location != None:
             print("compound button found")
             compound_button_location_center = pyautogui.center(compound_button_location)
@@ -73,9 +70,9 @@ class AdvancedCompoundingBot:
         return pyautogui.locateOnScreen('mm.png', confidence=0.85) == None and pyautogui.locateOnScreen('ready.png', confidence=0.95) != None
 
     def cycle(self):
-        #self.refresh_website()
-        #self.goto_garden_tab()
-        #self.adjust_position()
+        self.refresh_website()
+        self.goto_garden_tab()
+        self.adjust_position()
         while True:
             if not self.compound():
                 print("breaking")
@@ -85,4 +82,4 @@ class AdvancedCompoundingBot:
 
 
 x = AdvancedCompoundingBot()
-x.cycle()
+x.cycle() 
