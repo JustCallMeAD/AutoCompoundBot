@@ -25,7 +25,7 @@ class AdvancedCompoundingBot:
                 pyautogui.scroll(-80)
                 time.sleep(1)
                 pyautogui.click(1820, 610)
-                time.sleep(10)
+                time.sleep(20)
                 compound_success = self.check_if_compound_succes() 
                 if compound_success == True:
                     return True
